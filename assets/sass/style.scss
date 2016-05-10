@@ -1,0 +1,371 @@
+@import "variables";
+
+/***
+GENERAL STYLE
+***/
+body {
+	background: #fff;
+	color:#dcdcdc;
+	font-family: $font-primary;
+	font-size:14px;
+	font-weight:400;
+}
+
+ul,ol {
+	margin:0px;
+	padding:0px;
+}
+
+li {
+	list-style-type: none;
+}
+
+p {
+	margin: 0;
+	padding: 0;
+}
+
+.no-padding {
+	padding:0px;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+.text-center {
+	text-align: center;
+}
+
+
+/***
+HEADER
+***/
+header {
+	padding:0.75em 0;
+
+	.nav-pills {
+
+		li a{
+			@include transition;
+		}
+
+		li.active>a, li.active>a:hover {
+			background:#5B707E;
+		}
+	}
+
+}
+
+
+/***
+INTRO
+***/
+#intro {
+
+	h1 {
+		font-size: 2.5em;
+		line-height: 1.2em;
+	}
+
+	a {
+		font-weight: 700;
+		font-size: 1.2em;
+	}
+
+	a:first-child {
+		color: #5B707E;
+	}
+
+	span {
+		@include transition;
+	}
+
+	.top {
+		background:#767879;
+		color:#fff;
+		padding:2em 0;
+	}
+
+	.left,.right {
+		padding:0.75em 0;
+	}
+
+	.left {
+		background:#D3C82E;
+	}
+
+	.left:hover span {
+		margin: 0 0 0 1em;
+	}
+
+	.right {
+		background:#5B707E;
+		color:#fff;
+	}
+
+	.right:hover span{
+		margin: 0 0 0 1em;
+	}
+
+}
+
+
+/***
+HOT NEWS
+***/
+#hot-news {
+	background-image: url('../img/bg-hot-news.jpg');
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-size: cover;
+	padding: 4.5em;
+
+	li {
+		background: rgba(255,255,255,0.8);
+		color:#555;
+		padding: 1.5em;
+		margin: 0 0 1.8em 0;
+
+		p {
+			font-size: 2em;
+			font-style: italic;
+			font-weight: 600;
+			line-height: 1.2em;
+			padding: 0 0 0 1.2em;
+		}
+
+		span {
+			display:block;
+			margin: 0 0 1.2em 0; 
+		}
+
+		img {
+			max-width: 150px;
+			margin: 0 2em 0 0;
+			@include bw;
+		}
+
+
+	}
+
+	li.small img {
+		max-width: 80px;
+	}	
+
+	li:last-child {
+		margin: 0;
+	}
+
+}
+
+
+
+/***
+CALL TO ACTION
+***/
+#call-to-action {
+	background: #F3F3F4;
+	color:#555;
+	padding: 1em;
+	text-align: center;
+	font-size: 1.3em;
+
+	a {
+		color:#5B707E;
+		font-weight: 700;
+		@include transition;
+	}
+
+	a:hover {
+		margin: 0 0 0 1em;
+	}
+
+	p {
+
+	}
+
+}
+
+
+/***
+NEWS
+***/
+#news {
+	padding: 2em;
+
+	.no-padding {
+		padding:5px;
+	}
+
+	img {
+		vertical-align: middle;
+	}
+
+	big {
+		font-weight: 600;
+		font-size: 1.8em;
+	}
+
+	span {
+		color:#D3C82E;
+		font-style: normal;
+	}
+
+	article {
+
+		li {
+			width: 100%;
+			min-height: 80px;
+			background: #EBF5F9;
+			display: inline-block;
+			padding: 1.3em;
+			font-size: 1.4em;
+			font-weight: 600;
+			font-style: italic;
+			color:#5B707E;
+		}
+
+		li.date {
+			font-size: 0.8em;
+			line-height: 1.5em;
+		}
+
+		li.video {
+			border-top:1px solid #daeff8;
+		}
+	}
+
+	ul.pagination {
+    	padding: 0;
+    	margin: 3em 0;
+    	text-align: center;
+	}
+
+	ul.pagination li {
+		display: inline-block;
+
+		a {
+			color: #5B707E;
+   			font-weight: 600;
+    		float: left;
+    		padding: 8px 16px;
+    		text-decoration: none;
+    		@include transition;
+		}
+
+	}
+
+	ul.pagination li a.active {
+    	background: #eee;
+    	color: #5B707E;
+    	font-weight: 700;
+	}
+
+	ul.pagination li a:hover:not(.active) {
+		background-color: #ddd;
+	}
+}
+
+
+/***
+FOOTER
+***/
+footer {
+	padding: 1em 0 2em 0;
+	background: #4A4A4A;
+
+	h4 {
+		text-transform: uppercase;
+		color: #fff;
+	}
+
+	img {
+		margin: 1.5em 0;
+	}
+
+	p {
+		font-size: 0.9em;
+	}
+
+	li {
+		font-size: 0.9em;
+
+		margin: 0 0 1.2em 0;
+
+		a {
+			color: #dcdcdc;
+			@include transition;
+		}
+
+		a:hover {
+			color: #fff;
+		}
+	}
+}
+
+
+/***
+MEDIA QUERIES
+***/
+
+@media only screen and (max-width : 767px) {
+
+	#intro {
+		text-align: center;
+		
+	}
+
+	#news {
+
+		.no-padding {
+			padding: 2px !important;
+		}
+
+		article {
+			margin:0 0 3em 0;
+
+			li {
+				text-align: center;
+				min-height: auto !important;
+
+				img {
+					margin: 0 auto;
+				}
+			}
+		}
+	}
+
+	footer {
+		text-align: center;
+
+		img {
+			max-width: 200px !important;
+			margin: 2em auto !important;
+		}
+	}
+
+}
+
+@media only screen and (max-width : 480px) {
+
+	#hot-news {
+
+		li {
+			text-align: center;
+
+			span {
+				img{
+					margin: 0 auto !important;
+				}
+			}
+		}
+
+		p {
+			font-size: 1.5em !important;
+			padding: 0em !important;
+		}
+
+	}
+
+}

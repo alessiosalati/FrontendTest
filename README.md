@@ -1,92 +1,19 @@
 # Test Frontend
 
-![Logo ProntoPro.it](https://www.prontopro.it/bundles/prontoprofrontend/img/logo.png)
+Ho utilizzato le seguenti tecnologie:
 
-## Istruzioni
+  - Bootstrap
+  - SASS
+  - Compass
 
-Il test consiste nella ralizzazione di due pagine:
-- Una dinamica con forms, chiamate ajax e manipolazione del DOM.
-- Una statica per la realizzazione di un mockup dettagliato.
+Non avendo a disposizione, ovviamente, su questa macchina Linux (essendo fuori per lavoro) Adobe Fireworks non so se il png di esempio conteneva i livelli e quindi con essi potevo riutilizzare le immagini e vedere anche la parte tipografica.
+Quindi ho riprodotto il template basandomi solamente sulla parte visiva del progetto grafico.
 
-Le pagine devono essere realizzate secondo standards e best practices, con decente compatibilità cross-browser e in modo adatto alla fruizione su dispositivi mobili.
+Le modifiche che sono presenti rispetto all'originale sono le seguenti:
+  
+  - Nella fascia in alto sotto l'header manca l'immagine accanto allo slogan perchè non sapevo come recuperarla interamente dal progetto grafico in png dato che su questa macchina Linux non ho programmi di grafica.
+  - Stessa cosa per quando riguarda sia i loghi degli articoli in rilievo che gli altri, sono riuscito a recuperare alcune immagini da internet già con fondo trasparente e quindi utilizzabili, mentre le altre non presenti non potendole ritagliare non mi piaceva inserirle con gli sfondi bianchi con effetto "toppa"!
+  - La paginazione ho deciso, a mio gusto, di modificarla a livello di colori lasciando trasparente il background perchè a mio parere risultava molto più pulito il layout.
 
-Entrambe le pagine condividono header e footer.
-![header](http://prontoproit.github.io/FrontendTest/img/header.png) ![footer](http://prontoproit.github.io/FrontendTest/img/footer.png)
 
-### Pagina Dinamica
-
-![mockup](http://prontoproit.github.io/FrontendTest/img/mockup1.png)
-
-Nella sezione centrale c'è un campo con autocomplete le cui voci sono caricate attraverso una chiamata ajax all'indirizzo:  
-`https://www.prontopro.it/work-with-us/dev/fe/test/autocomplete`
-
-L'oggetto ritornato è nella forma:
-
-```
-[
-  {
-    "label": <label>,
-    "url": <url>
-  }, ...
-]
-```
-
-In cui `<label>` è l'etichetta della suggestion da mostrare nell'autocomplete e `<url>` è l'indirizzo da cui ottenere le specifiche del form da renderizzare.
-
-Al momento della selezione di una tipologia di form dall'autocomplete bisogna renderizzarlo ottenendo le specifiche con una chiamata ajax all'url ottenuto allo step precedente.
-
-L'oggetto ritornato è nella forma:
-
-```
-[
-  {
-    "name": <name>,
-    "label": <label>,
-    "type": <type>,
-    "rules": [
-      {
-        "type": <rule_type>,
-        "msg": <error_message>,
-        "options": <optional_parameters>
-      }, ...
-    ]
-  }, ...
-]
-```
-
-(vedere [form0](https://www.prontopro.it/work-with-us/dev/fe/test/form/0), [form1](https://www.prontopro.it/work-with-us/dev/fe/test/form/1), [form2](https://www.prontopro.it/work-with-us/dev/fe/test/form/2) per riferimento ai possibili valori)
-
-![mockup](http://prontoproit.github.io/FrontendTest/img/mockup2.png)
-
-Quando viene cliccato il bottone di submit deve essere effettuata la validazione secondo le regole espresse in `rules`, mostrando eventuali messaggi di errore.
-
-Se il form passa la validazione i valori devono essere visualizzati nella colonna di destra. 
-
-Bonus:
-- Possibilità di eliminare una delle precedenti submission.
-- Possibilità di ricaricare i dati di una submission passata cliccandoci sopra.
-
-### Pagina statica
-
-Realizzare la pagina del seguente mockup:
-
-![mockup](http://prontoproit.github.io/FrontendTest/img/static.png)
-
-## Valutazione
-
-I primari oggetti di valutazione sono:
-- Completezza rispetto alle specifiche.
-- Organizzazione, pulizia e stile.
-
-Inoltre verranno considerate le scelte fatte:
-- Uso di un preprocessore (JS e/o CSS).
-- Uso di librerie e frameworks (JS e/o CSS).
-- Automatizzazione del processo di build.
-- Eventuale integrazione di meccanismi di testing e/o linting.
-
-(Dove ritenuto opportuno motivare le scelte effettuate)
-
-## Modalità di consegna
-
-Effettuare una fork di questa repository, realizzare le pagine richieste e, a compito eseguito, iniziare una pull request.  
-Inoltre scrivere una semplice nota (o come messaggio sulla PR o rimpiazzando questo README) sulla struttura del progetto, su come eseguirlo ed eventuali info utili.
+NB: La pagina è volutamente prettamente statica, perchè se ho capito bene questo doveva essere, quindi non c'è nessuna aggiunta di script per esempio per la paginazione degli articoli ovvero cliccando su pagina 2 non vengono sostituiti quelli presenti nella pagina 1. Se bisogna aggiungere anche questa funzionalità non ci sono problemi, ma dalle specifiche non era dichiarato.
